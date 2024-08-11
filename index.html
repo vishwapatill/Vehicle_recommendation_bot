@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Recommendation Bot</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="my_nav">
+        <div><img class="logo2" src="./images/9294843.png" alt=""></div>
+        <div id="div2"><h1> <span id="inside-text">Vehicle Recommendation </span>Assistant</h1></div>
+       
+
+    </div>
+    <div class="container">
+        <div class="inner-container">
+            <img class="my-img" src="./images/download.png" alt="Profile Picture">
+            <h4 id="thinking-text">Enter your preferences to get a vehicle recommendation</h4>
+        </div>
+        <form id="vehicle-form" class="form">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputBudget">Enter budget (in INR)</label>
+                    <input type="number" class="form-control" id="inputBudget" placeholder="20000" value="400000" min=40000 max=100000000>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputType">Select vehicle type</label>
+                    <select class="form-control" id="inputType">
+                        <option selected>Choose...</option>
+                        <option value="car" selected>Car</option>
+                        <option value="bike">Bike</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputFuel">Select fuel type</label>
+                    <select class="form-control" id="inputFuel">
+                        <option selected>Choose...</option>
+                        <option value="petrol" selected>Petrol</option>
+                        <option value="diesel">Diesel</option>
+                        <option value="electric">Electric</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputBrand">Preferred brand (optional)</label>
+                    <input type="text" class="form-control" id="inputBrand" placeholder="Toyota">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEngineSize">Engine size (in cc) (optional) </label>
+                    <input type="number" class="form-control" id="inputEngineSize" placeholder="1500">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPower">Power (in HP) (optional)</label>
+                    <input type="number" class="form-control" id="inputPower" placeholder="100" >
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputMileage">Mileage (in kmpl)</label>
+                    <input type="number" class="form-control" id="inputMileage" placeholder="20" value="20">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputOccasion">Occasion</label>
+                    <input type="text" class="form-control" id="inputOccasion" placeholder="Daily commute, Road trips" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputDescription">Optional description</label>
+                <textarea class="form-control" id="inputDescription" rows="3"> </textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Generate Recommendation</button>
+            <div class="loading_1"><video  loop autoplay width="200px">
+                <source src="./images/WhatsApp Video 2024-07-19 at 01.10.51_55a24fb2 (online-video-cutter.com) (1).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div>Generating Recommendations</div>
+            </div>
+        </form>
+    
+        <div class="response" id="response"></div>
+    </div>
+
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+    </script>
+    <script type="module" src="scripts.js">
+        
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
